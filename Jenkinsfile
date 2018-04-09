@@ -10,7 +10,7 @@ node {
     docker.withRegistry('https://finance.icp.sc.ibm.com:8500/', 'docker'){
     stage "Build"
 
-        def pcImg = docker.build("finance.icp.sc.ibm.com:8500/blockchain/marble-sapp:${env.BUILD_ID}", "-f scripts/Dockerfile .")
+        def pcImg = docker.build("finance.icp.sc.ibm.com:8500/blockchain/marbles-app:${env.BUILD_ID}", "-f scripts/Dockerfile .")
        // sh "cp /root/.dockercfg ${HOME}/.dockercfg"
         pcImg.push()
 
