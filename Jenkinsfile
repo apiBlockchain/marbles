@@ -17,8 +17,8 @@ node {
     input 'Do you want to proceed with Deployment?'
     stage "Deploy"
 
-        sh "kubectl set image deployment/marblesapp marblesapp=${imageName}"
-        sh "kubectl rollout status deployment/marblesapp
+        sh "kubectl set image deployment/marblesapp-marblesapp marblesapp=${imageName}"
+        sh "kubectl rollout status deployment/marblesapp-marblesapp
 }
 }
 }
