@@ -18,7 +18,7 @@ node {
     stage "Deploy"
 
         sh "kubectl set image deployment/marblesapp-marblesapp marblesapp=${imageName}"
-        sh "kubectl rollout status deployment/marblesapp-marblesapp
+        sh "kubectl rollout status deployment/marblesapp-marblesapp"
 }
 }
 }
