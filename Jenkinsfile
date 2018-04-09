@@ -10,15 +10,15 @@ node {
     docker.withRegistry('https://finance.icp.sc.ibm.com:8500/', 'docker'){
     stage "Build"
 
-        def pcImg = docker.build("finance.icp.sc.ibm.com:8500/blockchain/marbles-app:${env.BUILD_ID}", "-f scripts/Dockerfile .")
+        def pcImg = docker.build("finance.icp.sc.ibm.com:8500/blockchain/marble-sapp:${env.BUILD_ID}", "-f scripts/Dockerfile .")
        // sh "cp /root/.dockercfg ${HOME}/.dockercfg"
         pcImg.push()
 
     input 'Do you want to proceed with Deployment?'
     stage "Deploy"
 
-        sh "kubectl set image deployment/demoapp-demochart demochart=${imageName}"
-        sh "kubectl rollout status deployment/demoapp-demochart"
+        sh "kubectl set image deployment/marblesapp marblesapp=${imageName}"
+        sh "kubectl rollout status deployment/marblesapp
 }
 }
 }
